@@ -17,7 +17,7 @@ class Course (BaseModel):
     name = models.CharField(verbose_name ="Course Name", max_length = 50)
     description = models.CharField(verbose_name = "Course Description",max_length = 100)
     learn_time =  models.IntegerField(default=0, verbose_name="Learning Time (Minute)")
-    difficultly = models.CharField(verbose_name= "Difficultly",choices=(("easy","Easy"),("medium","Medium"),("hard","Hard")), max_length = 2)
+    difficultly = models.CharField(verbose_name= "Difficultly",choices=(("easy","Easy"),("medium","Medium"),("hard","Hard")), max_length = 10)
     students = models.IntegerField(default=0, verbose_name= "Students")
     favorite_number = models.IntegerField(default=0, verbose_name= "Favorites")
     click_number = models.IntegerField(default=0, verbose_name="Number of Clicks")
@@ -47,6 +47,9 @@ class Lesson(BaseModel):
         verbose_name = "Lesson information"
         verbose_name_plural = verbose_name
 
+    def __str__(self):
+        return self.name
+
 
 class Video(BaseModel):
     lesson = models.ForeignKey(Lesson, verbose_name="Charter", on_delete=models.CASCADE)
@@ -67,4 +70,11 @@ class CourseResource(BaseModel):
     name = models.CharField(verbose_name="Name", max_length=100)
     file = models.FileField(upload_to="course/resource/%Y%m", verbose_name="Download URL", max_length=200)
 
+    class Meta:
+        verbose_name = "Course Resources"
+        verbose_name_plural = verbose_name
+
+
+    def __str__(self):
+        return self.name
 

@@ -18,7 +18,7 @@ class CourseOrg(BaseModel):
     name = models.CharField(max_length=50, verbose_name="Organization name")
     description = models.TextField(verbose_name="Organization description")
     tag = models.CharField(default="Good", max_length=10, verbose_name="Course tage")
-    category = models.CharField(default="School", verbose_name="Type of the organization", max_length=4,
+    category = models.CharField(default="School", verbose_name="Type of the organization", max_length=40,
                                 choices=(("school", "School"), ("personal", "Personal"), ("university","University")))
     click_nums = models.IntegerField(default=0, verbose_name=u"Number of clicks")
     image = models.ImageField(upload_to="org/%Y%m", verbose_name="Organization image")

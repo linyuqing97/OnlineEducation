@@ -16,6 +16,7 @@ class BaseModel(models.Model):
     class Meta:
         abstract = True
 
+
 class UserProfile(AbstractUser):
     nick_name = models.CharField(max_length=60, verbose_name="Name", null=True, blank=True)
     birthday = models.DateField(verbose_name="Birthday", null=True, blank=True)
@@ -31,6 +32,6 @@ class UserProfile(AbstractUser):
     def __str__(self):
         if self.nick_name:
             return self.nick_name
-
-        return self.username
+        else:
+            return self.username
 # Create your models here.
