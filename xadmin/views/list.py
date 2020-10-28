@@ -188,7 +188,7 @@ class ListAdminView(ModelAdminView):
                     self.page_num + 1).object_list
             except InvalidPage:
                 if ERROR_FLAG in self.request.GET.keys():
-                    return SimpleTemplateResponse('xadmin/views/invalid_setup.html', {
+                    return SimpleTemplateResponse('xadmin/views/invalid_setup.org_list.html', {
                         'title': _('Database error'),
                     })
                 return HttpResponseRedirect(self.request.path + '?' + ERROR_FLAG + '=1')
@@ -407,7 +407,7 @@ class ListAdminView(ModelAdminView):
 
         response = self.get_response(context, *args, **kwargs)
         return response or TemplateResponse(request, self.object_list_template or
-                                            self.get_template_list('views/model_list.html'), context)
+                                            self.get_template_list('views/model_list.org_list.html'), context)
 
     @filter_hook
     def post_response(self, *args, **kwargs):
@@ -610,7 +610,7 @@ class ListAdminView(ModelAdminView):
         return media
 
     # Blocks
-    @inclusion_tag('xadmin/includes/pagination.html')
+    @inclusion_tag('xadmin/includes/pagination.org_list.html')
     def block_pagination(self, context, nodes, page_type='normal'):
         """
         Generates the series of links to the pages in a paginated list.

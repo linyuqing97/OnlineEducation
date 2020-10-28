@@ -249,7 +249,7 @@ class BaseAdminPlugin(BaseAdminObject):
 class BaseAdminView(BaseAdminObject, View):
     """ Base Admin view, support some comm attrs."""
 
-    base_template = 'xadmin/base.html'
+    base_template = 'xadmin/base.org_list.html'
     need_site_permission = True
 
     def __init__(self, request, *args, **kwargs):
@@ -317,8 +317,8 @@ class BaseAdminView(BaseAdminObject, View):
 
 class CommAdminView(BaseAdminView):
 
-    base_template = 'xadmin/base_site.html'
-    menu_template = 'xadmin/includes/sitemenu_default.html'
+    base_template = 'xadmin/base_site.org_list.html'
+    menu_template = 'xadmin/includes/sitemenu_default.org_list.html'
 
     site_title = getattr(settings, "XADMIN_TITLE", _(u"Django Xadmin"))
     site_footer = getattr(settings, "XADMIN_FOOTER_TITLE", _(u"my-company.inc"))

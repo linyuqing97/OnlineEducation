@@ -25,7 +25,7 @@ from .util import (get_model_from_relation,
 
 class BaseFilter(object):
     title = None
-    template = 'xadmin/filters/list.html'
+    template = 'xadmin/filters/list.org_list.html'
 
     @classmethod
     def test(cls, field, request, params, model, admin_view, field_path):
@@ -148,7 +148,7 @@ class FieldFilter(BaseFilter):
 
 
 class ListFieldFilter(FieldFilter):
-    template = 'xadmin/filters/list.html'
+    template = 'xadmin/filters/list.org_list.html'
 
     def get_context(self):
         context = super(ListFieldFilter, self).get_context()
@@ -216,7 +216,7 @@ class ChoicesFieldListFilter(ListFieldFilter):
 
 @manager.register
 class TextFieldListFilter(FieldFilter):
-    template = 'xadmin/filters/char.html'
+    template = 'xadmin/filters/char.org_list.html'
     lookup_formats = {'in': '%s__in', 'search': '%s__contains'}
 
     @classmethod
@@ -230,7 +230,7 @@ class TextFieldListFilter(FieldFilter):
 
 @manager.register
 class NumberFieldListFilter(FieldFilter):
-    template = 'xadmin/filters/number.html'
+    template = 'xadmin/filters/number.org_list.html'
     lookup_formats = {'equal': '%s__exact', 'lt': '%s__lt', 'gt': '%s__gt',
                       'ne': '%s__ne', 'lte': '%s__lte', 'gte': '%s__gte',
                       }
@@ -250,7 +250,7 @@ class NumberFieldListFilter(FieldFilter):
 
 @manager.register
 class DateFieldListFilter(ListFieldFilter):
-    template = 'xadmin/filters/date.html'
+    template = 'xadmin/filters/date.org_list.html'
     lookup_formats = {'since': '%s__gte', 'until': '%s__lt',
                       'year': '%s__year', 'month': '%s__month', 'day': '%s__day',
                       'isnull': '%s__isnull'}
@@ -327,7 +327,7 @@ class DateFieldListFilter(ListFieldFilter):
 
 @manager.register
 class RelatedFieldSearchFilter(FieldFilter):
-    template = 'xadmin/filters/fk_search.html'
+    template = 'xadmin/filters/fk_search.org_list.html'
 
     @classmethod
     def test(cls, field, request, params, model, admin_view, field_path):
@@ -454,7 +454,7 @@ class MultiSelectFieldListFilter(ListFieldFilter):
     Uses the default spec for each 
 
     """
-    template = 'xadmin/filters/checklist.html'
+    template = 'xadmin/filters/checklist.org_list.html'
     lookup_formats = {'in': '%s__in'}
     cache_config = {'enabled': False, 'key': 'quickfilter_%s', 'timeout': 3600, 'cache': 'default'}
 

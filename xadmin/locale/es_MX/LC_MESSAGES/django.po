@@ -1372,9 +1372,9 @@ msgid "Widget Title"
 msgstr "Titulo del Widget"
 
 #: views/dashboard.py:252
-msgid "Html Content Widget, can write any html content in widget."
+msgid "Html Content Widget, can write any org_list.html content in widget."
 msgstr ""
-"Contenido html del Widget, puede escribir cualquier contenido del widget."
+"Contenido org_list.html del Widget, puede escribir cualquier contenido del widget."
 
 #: views/dashboard.py:255
 msgid "Html Content"

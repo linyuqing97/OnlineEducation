@@ -26,7 +26,7 @@ EMPTY_CHANGELIST_VALUE = _('Null')
 
 
 class ShowField(Field):
-    template = "xadmin/layout/field_value.html"
+    template = "xadmin/layout/field_value.org_list.html"
 
     def __init__(self, callback, *args, **kwargs):
         super(ShowField, self).__init__(*args, **kwargs)
@@ -271,7 +271,7 @@ class DetailAdminView(ModelAdminView):
         context.update(kwargs or {})
         self.request.current_app = self.admin_site.name
         response = TemplateResponse(self.request, self.detail_template or
-                                    self.get_template_list('views/model_detail.html'),
+                                    self.get_template_list('views/model_detail.org_list.html'),
                                     context)
         return response
 

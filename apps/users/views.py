@@ -1,15 +1,21 @@
 from django.shortcuts import render
 from django.views.generic.base import View
-from django.contrib.auth import authenticate,login
+from django.contrib.auth import authenticate,login,logout
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
 from apps.users.forms import LoginForm
 # Create your views here.
 
+class LogoutView(View):
+    def get(self,request,*args,**kwargs):
+        logout(request)
+        return HttpResponseRedirect(reverse("index"))
 
 class LoginView(View):
     def get(self, request, *args, **kwargs):
+        if request.user.is_authenticated:
+            return HttpResponseRedirect(reverse("index"))
         return render(request, "login.html")
 
     def post(self, request, *args, **kwargs):
@@ -34,3 +40,7 @@ class LoginView(View):
         #
         else:
             return render(request,"login.html",{"login_form":login_form})
+
+class RegisterView(View):
+    def get(self,request, *args, ** kwargs):
+        return render (request,'register.html')

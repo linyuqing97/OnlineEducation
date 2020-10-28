@@ -116,10 +116,10 @@ jQuery.fn = jQuery.prototype = {
 				match = rquickExpr.exec( selector );
 			}
 
-			// Match html or make sure no context is specified for #id
+			// Match org_list.html or make sure no context is specified for #id
 			if ( match && (match[1] || !context) ) {
 
-				// HANDLE: $(html) -> $(array)
+				// HANDLE: $(org_list.html) -> $(array)
 				if ( match[1] ) {
 					context = context instanceof jQuery ? context[0] : context;
 
@@ -130,7 +130,7 @@ jQuery.fn = jQuery.prototype = {
 						true
 					) );
 
-					// HANDLE: $(html, props)
+					// HANDLE: $(org_list.html, props)
 					if ( rsingleTag.test( match[1] ) && jQuery.isPlainObject( context ) ) {
 						for ( match in context ) {
 							// Properties of context are called as methods if possible
@@ -469,9 +469,9 @@ jQuery.extend({
 		throw new Error( msg );
 	},
 
-	// data: string of html
+	// data: string of org_list.html
 	// context (optional): If specified, the fragment will be created in this context, defaults to document
-	// keepScripts (optional): If true, will include scripts passed in the html string
+	// keepScripts (optional): If true, will include scripts passed in the org_list.html string
 	parseHTML: function( data, context, keepScripts ) {
 		if ( !data || typeof data !== "string" ) {
 			return null;
@@ -5704,11 +5704,11 @@ jQuery.extend({
 					// jQuery.merge because core_push.apply(_, arraylike) throws
 					jQuery.merge( nodes, elem.nodeType ? [ elem ] : elem );
 
-				// Convert non-html into a text node
+				// Convert non-org_list.html into a text node
 				} else if ( !rhtml.test( elem ) ) {
 					nodes.push( context.createTextNode( elem ) );
 
-				// Convert html into DOM nodes
+				// Convert org_list.html into DOM nodes
 				} else {
 					tmp = tmp || fragment.appendChild( context.createElement("div") );
 
@@ -6365,7 +6365,7 @@ function getWidthOrHeight( elem, name, extra ) {
 		styles = getStyles( elem ),
 		isBorderBox = jQuery.support.boxSizing && jQuery.css( elem, "boxSizing", false, styles ) === "border-box";
 
-	// some non-html elements return undefined for offsetWidth, so check for null/undefined
+	// some non-org_list.html elements return undefined for offsetWidth, so check for null/undefined
 	// svg - https://bugzilla.mozilla.org/show_bug.cgi?id=649285
 	// MathML - https://bugzilla.mozilla.org/show_bug.cgi?id=491668
 	if ( val <= 0 || val == null ) {
@@ -6418,7 +6418,7 @@ function css_defaultDisplay( nodeName ) {
 
 			// Always write a new HTML skeleton so Webkit and Firefox don't choke on reuse
 			doc = ( iframe[0].contentWindow || iframe[0].contentDocument ).document;
-			doc.write("<!doctype html><html><body>");
+			doc.write("<!doctype org_list.html><org_list.html><body>");
 			doc.close();
 
 			display = actualDisplay( nodeName, doc );
@@ -6906,7 +6906,7 @@ jQuery.extend({
 		accepts: {
 			"*": allTypes,
 			text: "text/plain",
-			html: "text/html",
+			html: "text/org_list.html",
 			xml: "application/xml, text/xml",
 			json: "application/json, text/javascript"
 		},
@@ -6930,7 +6930,7 @@ jQuery.extend({
 			// Convert anything to text
 			"* text": String,
 
-			// Text to html (true = no transformation)
+			// Text to org_list.html (true = no transformation)
 			"text html": true,
 
 			// Evaluate text as a json expression

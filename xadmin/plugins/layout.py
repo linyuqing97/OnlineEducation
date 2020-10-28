@@ -14,13 +14,13 @@ DEFAULT_LAYOUTS = {
         'key': 'table',
         'icon': 'fa fa-table',
         'name': _(u'Table'),
-        'template': 'views/model_list.html',
+        'template': 'views/model_list.org_list.html',
     },
     'thumbnails': {
         'key': 'thumbnails',
         'icon': 'fa fa-th-large',
         'name': _(u'Thumbnails'),
-        'template': 'grids/thumbnails.html',
+        'template': 'grids/thumbnails.org_list.html',
     },
 }
 

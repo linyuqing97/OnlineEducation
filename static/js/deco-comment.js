@@ -99,7 +99,7 @@ function submit_comment(){
 			});
 
 		}
-		// $(this).parents('.child_comment').find("textarea").html('sssssssss');
+		// $(this).parents('.child_comment').find("textarea").org_list.html('sssssssss');
 	});
 
 }

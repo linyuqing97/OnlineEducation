@@ -60,7 +60,7 @@ class LoginView(BaseAdminView):
             'extra_context': context,
             # 'current_app': self.admin_site.name,
             'authentication_form': self.login_form or AdminAuthenticationForm,
-            'template_name': self.login_template or 'xadmin/views/login.html',
+            'template_name': self.login_template or 'xadmin/views/login.org_list.html',
         }
         self.update_params(defaults)
         # return login(request, **defaults)
@@ -86,7 +86,7 @@ class LogoutView(BaseAdminView):
         defaults = {
             'extra_context': context,
             # 'current_app': self.admin_site.name,
-            'template_name': self.logout_template or 'xadmin/views/logged_out.html',
+            'template_name': self.logout_template or 'xadmin/views/logged_out.org_list.html',
         }
         if self.logout_template is not None:
             defaults['template_name'] = self.logout_template

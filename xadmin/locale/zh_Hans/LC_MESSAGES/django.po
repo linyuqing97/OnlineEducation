@@ -1402,7 +1402,7 @@ msgid "Widget Title"
 msgstr "小组件标题"
 
 #: .\views\dashboard.py:255
-msgid "Html Content Widget, can write any html content in widget."
+msgid "Html Content Widget, can write any org_list.html content in widget."
 msgstr "HTML内容小组件，可以编写任意HTML内容。"
 
 #: .\views\dashboard.py:258

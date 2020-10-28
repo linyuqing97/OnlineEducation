@@ -22,7 +22,7 @@ from xadmin.util import lookup_field, label_for_field, json
 class ChartWidget(ModelBaseWidget):
     widget_type = 'chart'
     description = _('Show models simple chart.')
-    template = 'xadmin/widgets/chart.html'
+    template = 'xadmin/widgets/chart.org_list.html'
     widget_icon = 'fa fa-bar-chart-o'
 
     def convert(self, data):

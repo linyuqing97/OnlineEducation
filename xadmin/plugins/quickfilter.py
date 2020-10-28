@@ -19,7 +19,7 @@ class QuickFilterMultiSelectFieldListFilter(MultiSelectFieldListFilter):
     Uses the default spec for each 
 
     """
-    template = 'xadmin/filters/quickfilter.html'
+    template = 'xadmin/filters/quickfilter.org_list.html'
 
 
 class QuickFilterPlugin(BaseAdminPlugin):

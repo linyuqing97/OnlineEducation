@@ -46,7 +46,7 @@ FORMFIELD_FOR_DBFIELD_DEFAULTS = {
 
 
 class ReadOnlyField(Field):
-    template = "xadmin/layout/field_value.html"
+    template = "xadmin/layout/field_value.org_list.html"
 
     def __init__(self, *args, **kwargs):
         self.detail = kwargs.pop('detail')
@@ -416,7 +416,7 @@ class CreateAdminView(ModelFormAdminView):
 
         return TemplateResponse(
             self.request, self.add_form_template or self.get_template_list(
-                'views/model_form.html'),
+                'views/model_form.org_list.html'),
             context)
 
     @filter_hook
@@ -503,7 +503,7 @@ class UpdateAdminView(ModelFormAdminView):
 
         return TemplateResponse(
             self.request, self.change_form_template or self.get_template_list(
-                'views/model_form.html'),
+                'views/model_form.org_list.html'),
             context)
 
     def post(self, request, *args, **kwargs):

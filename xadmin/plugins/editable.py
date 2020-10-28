@@ -69,7 +69,7 @@ class EditPatchView(ModelFormAdminView, ListAdminView):
     def init_request(self, object_id, *args, **kwargs):
         self.org_obj = self.get_object(unquote(object_id))
 
-        # For list view get new field display html
+        # For list view get new field display org_list.html
         self.pk_attname = self.opts.pk.attname
 
         if not self.has_change_permission(self.org_obj):

@@ -19,7 +19,7 @@ function AdrInputPopDiv(){
     }else{
       initInput = $("#" + inpuId);
       //$(".dizhi_t").appendTo(initInput.parent());
-      //initInput.parent().append($(".dizhi_t").parent().html());
+      //initInput.parent().append($(".dizhi_t").parent().org_list.html());
       //display: inline-block;
       var _wrap = $('<span style="position:relative;padding:0;z-index:995"></span>');
       initInput.wrap(_wrap);

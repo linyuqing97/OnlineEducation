@@ -18,7 +18,7 @@
             event.stopPropagation();
         });
         event.stopPropagation();
-        $("html").click(function() {
+        $("org_list.html").click(function() {
             $box.hide();
         });
         $("input.proCitySelAll").removeClass("current2");
@@ -197,7 +197,7 @@
             }
             $("#dimCityQuery").css("width", autoWidth).css("top", t + h - 1).css("left", l).show();
             $(".backifname").show();
-            $("html").click(function() {
+            $("org_list.html").click(function() {
                 $("#dimCityQuery").hide();
                 $(".backifname").hide();
             });

@@ -18,13 +18,13 @@ from xadmin.views import BaseAdminPlugin, ModelFormAdminView, DetailAdminView, f
 
 
 class ShowField(Field):
-    template = "xadmin/layout/field_value.html"
+    template = "xadmin/layout/field_value.org_list.html"
 
     def __init__(self, admin_view, *args, **kwargs):
         super(ShowField, self).__init__(*args, **kwargs)
         self.admin_view = admin_view
         if admin_view.style == 'table':
-            self.template = "xadmin/layout/field_value_td.html"
+            self.template = "xadmin/layout/field_value_td.org_list.html"
 
     def render(self, form, form_style, context, template_pack=TEMPLATE_PACK, **kwargs):
         html = ''
@@ -48,7 +48,7 @@ class DeleteField(Field):
 
 
 class TDField(Field):
-    template = "xadmin/layout/td-field.html"
+    template = "xadmin/layout/td-field.org_list.html"
 
 
 class InlineStyleManager(object):
@@ -64,7 +64,7 @@ style_manager = InlineStyleManager()
 
 
 class InlineStyle(object):
-    template = 'xadmin/edit_inline/stacked.html'
+    template = 'xadmin/edit_inline/stacked.org_list.html'
 
     def __init__(self, view, formset):
         self.view = view
@@ -79,22 +79,22 @@ style_manager.register_style('stacked', InlineStyle)
 
 
 class OneInlineStyle(InlineStyle):
-    template = 'xadmin/edit_inline/one.html'
+    template = 'xadmin/edit_inline/one.org_list.html'
 style_manager.register_style("one", OneInlineStyle)
 
 
 class AccInlineStyle(InlineStyle):
-    template = 'xadmin/edit_inline/accordion.html'
+    template = 'xadmin/edit_inline/accordion.org_list.html'
 style_manager.register_style("accordion", AccInlineStyle)
 
 
 class TabInlineStyle(InlineStyle):
-    template = 'xadmin/edit_inline/tab.html'
+    template = 'xadmin/edit_inline/tab.org_list.html'
 style_manager.register_style("tab", TabInlineStyle)
 
 
 class TableInlineStyle(InlineStyle):
-    template = 'xadmin/edit_inline/tabular.html'
+    template = 'xadmin/edit_inline/tabular.org_list.html'
 
     def update_layout(self, helper):
         helper.add_layout(
@@ -193,7 +193,7 @@ class InlineModelAdmin(ModelFormAdminView):
         helper = FormHelper()
         helper.form_tag = False
         helper.include_media = False
-        # override form method to prevent render csrf_token in inline forms, see template 'bootstrap/whole_uni_form.html'
+        # override form method to prevent render csrf_token in inline forms, see template 'bootstrap/whole_uni_form.org_list.html'
         helper.form_method = 'get'
 
         style = style_manager.get_style(
@@ -329,7 +329,7 @@ class InlineFormset(Fieldset):
         self.template = formset.style.template
         self.inline_style = formset.style.name
         if allow_blank and len(formset) == 0:
-            self.template = 'xadmin/edit_inline/blank.html'
+            self.template = 'xadmin/edit_inline/blank.org_list.html'
             self.inline_style = 'blank'
         self.formset = formset
         self.model = formset.model

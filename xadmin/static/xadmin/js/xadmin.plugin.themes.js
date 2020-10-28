@@ -71,9 +71,9 @@
 
             var ifmDoc = iframe.contentDocument || iframe.contentWindow.document;
             ifmDoc.open();
-            ifmDoc.write('<!doctype><html><head></head><body>');
+            ifmDoc.write('<!doctype><org_list.html><head></head><body>');
             ifmDoc.write('<link rel="stylesheet" href="'+themeHref+'" />');
-            ifmDoc.write('</body></html>');
+            ifmDoc.write('</body></org_list.html>');
             ifmDoc.close();
 
 

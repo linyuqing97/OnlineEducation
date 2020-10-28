@@ -32,7 +32,7 @@
 {% if not formset.formset.detail_page %}
 <span style="display: none" id="{{ prefix }}-empty">
 {% blockcapture inline_html %}{% block formset_empty %}{% endblock formset_empty %}{% endblockcapture %}
-{{inline_html}} {# html escaped #}
+{{inline_html}} {# org_list.html escaped #}
 </span>
 {% endif %}
 {% endblock box_extra %}

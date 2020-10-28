@@ -16,7 +16,7 @@ class MobilePlugin(BaseAdminPlugin):
         return self._test_mobile()
 
     def get_context(self, context):
-        #context['base_template'] = 'xadmin/base_mobile.html'
+        #context['base_template'] = 'xadmin/base_mobile.org_list.html'
         context['is_mob'] = True
         return context
 

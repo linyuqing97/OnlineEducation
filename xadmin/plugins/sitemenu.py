@@ -3,8 +3,8 @@ from xadmin.sites import site
 from xadmin.views import BaseAdminPlugin, CommAdminView
 
 BUILDIN_STYLES = {
-    'default': 'xadmin/includes/sitemenu_default.html',
-    'accordion': 'xadmin/includes/sitemenu_accordion.html',
+    'default': 'xadmin/includes/sitemenu_default.org_list.html',
+    'accordion': 'xadmin/includes/sitemenu_accordion.org_list.html',
 }
 
 

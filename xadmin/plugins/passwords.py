@@ -15,12 +15,12 @@ class ResetPasswordSendView(BaseAdminView):
     need_site_permission = False
 
     password_reset_form = PasswordResetForm
-    password_reset_template = 'xadmin/auth/password_reset/form.html'
-    password_reset_done_template = 'xadmin/auth/password_reset/done.html'
+    password_reset_template = 'xadmin/auth/password_reset/form.org_list.html'
+    password_reset_done_template = 'xadmin/auth/password_reset/done.org_list.html'
     password_reset_token_generator = default_token_generator
 
     password_reset_from_email = None
-    password_reset_email_template = 'xadmin/auth/password_reset/email.html'
+    password_reset_email_template = 'xadmin/auth/password_reset/email.org_list.html'
     password_reset_subject_template = None
 
     def get(self, request, *args, **kwargs):
@@ -72,7 +72,7 @@ class ResetPasswordComfirmView(BaseAdminView):
     need_site_permission = False
 
     password_reset_set_form = SetPasswordForm
-    password_reset_confirm_template = 'xadmin/auth/password_reset/confirm.html'
+    password_reset_confirm_template = 'xadmin/auth/password_reset/confirm.org_list.html'
     password_reset_token_generator = default_token_generator
 
     def do_view(self, request, uidb36, token, *args, **kwargs):
@@ -103,7 +103,7 @@ class ResetPasswordCompleteView(BaseAdminView):
 
     need_site_permission = False
 
-    password_reset_complete_template = 'xadmin/auth/password_reset/complete.html'
+    password_reset_complete_template = 'xadmin/auth/password_reset/complete.org_list.html'
 
     def get(self, request, *args, **kwargs):
         context = super(ResetPasswordCompleteView, self).get_context()

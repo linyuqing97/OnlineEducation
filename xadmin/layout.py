@@ -10,7 +10,7 @@ import math
 
 
 class Fieldset(layout.Fieldset):
-    template = "xadmin/layout/fieldset.html"
+    template = "xadmin/layout/fieldset.org_list.html"
 
     def __init__(self, legend, *fields, **kwargs):
         self.description = kwargs.pop('description', None)
@@ -62,7 +62,7 @@ class Container(layout.Div):
 # Override bootstrap3
 class InputGroup(layout.Field):
 
-    template = "xadmin/layout/input_group.html"
+    template = "xadmin/layout/input_group.org_list.html"
 
     def __init__(self, field, *args, **kwargs):
         self.field = field

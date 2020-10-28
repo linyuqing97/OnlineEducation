@@ -176,7 +176,7 @@ class WidgetDataError(Exception):
 
 class BaseWidget(forms.Form):
 
-    template = 'xadmin/widgets/base.html'
+    template = 'xadmin/widgets/base.org_list.html'
     description = 'Base Widget, don\'t use it.'
     widget_title = None
     widget_icon = 'fa fa-plus-square'
@@ -246,10 +246,10 @@ class BaseWidget(forms.Form):
 
 @widget_manager.register
 class HtmlWidget(BaseWidget):
-    widget_type = 'html'
+    widget_type = 'org_list.html'
     widget_icon = 'fa fa-file-o'
     description = _(
-        u'Html Content Widget, can write any html content in widget.')
+        u'Html Content Widget, can write any org_list.html content in widget.')
 
     content = forms.CharField(label=_(
         'Html Content'), widget=exwidgets.AdminTextareaWidget, required=False)
@@ -367,7 +367,7 @@ class PartialBaseWidget(BaseWidget):
 class QuickBtnWidget(BaseWidget):
     widget_type = 'qbutton'
     description = _(u'Quick button Widget, quickly open any page.')
-    template = "xadmin/widgets/qbutton.html"
+    template = "xadmin/widgets/qbutton.org_list.html"
     base_title = _(u"Quick Buttons")
     widget_icon = 'fa fa-caret-square-o-right'
 
@@ -414,7 +414,7 @@ class QuickBtnWidget(BaseWidget):
 class ListWidget(ModelBaseWidget, PartialBaseWidget):
     widget_type = 'list'
     description = _(u'Any Objects list Widget.')
-    template = "xadmin/widgets/list.html"
+    template = "xadmin/widgets/list.org_list.html"
     model_perm = 'view'
     widget_icon = 'fa fa-align-justify'
 
@@ -454,7 +454,7 @@ class ListWidget(ModelBaseWidget, PartialBaseWidget):
 class AddFormWidget(ModelBaseWidget, PartialBaseWidget):
     widget_type = 'addform'
     description = _(u'Add any model object Widget.')
-    template = "xadmin/widgets/addform.html"
+    template = "xadmin/widgets/addform.org_list.html"
     model_perm = 'add'
     widget_icon = 'fa fa-plus'
 
@@ -590,7 +590,7 @@ class Dashboard(CommAdminView):
     @never_cache
     def get(self, request, *args, **kwargs):
         self.widgets = self.get_widgets()
-        return self.template_response('xadmin/views/dashboard.html', self.get_context())
+        return self.template_response('xadmin/views/dashboard.org_list.html', self.get_context())
 
     @csrf_protect_m
     def post(self, request, *args, **kwargs):
@@ -664,4 +664,4 @@ class ModelDashboard(Dashboard, ModelAdminView):
     @never_cache
     def get(self, request, *args, **kwargs):
         self.widgets = self.get_widgets()
-        return self.template_response(self.get_template_list('views/model_dashboard.html'), self.get_context())
+        return self.template_response(self.get_template_list('views/model_dashboard.org_list.html'), self.get_context())

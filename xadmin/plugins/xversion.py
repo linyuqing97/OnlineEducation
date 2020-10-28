@@ -208,7 +208,7 @@ class RecoverListView(BaseReversionView):
 
         return TemplateResponse(
             request, self.recover_list_template or self.get_template_list(
-                "views/recover_list.html"),
+                "views/recover_list.org_list.html"),
             context)
 
 
@@ -264,7 +264,7 @@ class RevisionListView(BaseReversionView):
         context = self.get_context()
 
         return TemplateResponse(self.request, self.object_history_template or
-                                self.get_template_list('views/model_history.html'), context)
+                                self.get_template_list('views/model_history.org_list.html'), context)
 
     def get_version_object(self, version):
         obj_version = version._object_version
@@ -344,7 +344,7 @@ class RevisionListView(BaseReversionView):
         })
 
         return TemplateResponse(
-            self.request, self.revision_diff_template or self.get_template_list('views/revision_diff.html'),
+            self.request, self.revision_diff_template or self.get_template_list('views/revision_diff.org_list.html'),
             context)
 
     @filter_hook
@@ -437,7 +437,7 @@ class RevisionView(BaseRevisionView):
         form_template = self.revision_form_template
         return TemplateResponse(
             self.request, form_template or self.get_template_list(
-                'views/revision_form.html'),
+                'views/revision_form.org_list.html'),
             context)
 
     @filter_hook
@@ -474,7 +474,7 @@ class RecoverView(BaseRevisionView):
         form_template = self.recover_form_template
         return TemplateResponse(
             self.request, form_template or self.get_template_list(
-                'views/recover_form.html'),
+                'views/recover_form.org_list.html'),
             context)
 
     @filter_hook

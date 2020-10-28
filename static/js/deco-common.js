@@ -306,7 +306,7 @@ $(function() {
 	});
 	//返回顶部
 	$('.totop').click(function(){
-		$('html,body').animate({scrollTop:0},100);
+		$('org_list.html,body').animate({scrollTop:0},100);
 		return false;
 	});
 
@@ -452,7 +452,7 @@ $(function() {
     //弹出框关闭按钮
 	$('.jsCloseDialog').on('click', function(){
         $('#jsDialog').hide();
-        $('html').removeClass('dialog-open');
+        $('org_list.html').removeClass('dialog-open');
 		$(this).parents('.dialogbox').hide();
         $('#dialogBg').hide();
         if($(this).parent().find('form')[0]){
@@ -540,7 +540,7 @@ $(function() {
         $(this).children().stop().hide("fast")
     });
     $(".toolbar-item-gotop").click(function(){
-        $('html,body').stop().animate({scrollTop: '0px'}, 800);
+        $('org_list.html,body').stop().animate({scrollTop: '0px'}, 800);
     });
 
 	/*列表更多按钮*/
